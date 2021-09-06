@@ -80,3 +80,101 @@ Some common `String` methods:
 * `center`
 * `gsub` — global substitution(?), can take a regex matching pattern.
 
+Some common `Number` methods:
+
+* `Integer#to_f`
+* `Float#ceil`
+* `Float#floor`6 * 22
+* `Float#round`
+* `Float#to_i`
+
+Throwing exceptions with `raise`:
+
+```ruby
+begin  
+   puts 'Before the raise.'  
+   raise 'ARGH!'  
+   puts 'This one will never get printed.'  
+rescue  
+   puts 'Recovering...'  
+end
+
+puts 'Nyanpasu!'
+
+#=> "Before the raise."
+#=> "Recovering..."
+#=> "Nyanpasu!"
+```
+
+> Module is Classes parent in the object hierarchy.
+
+Module syntax:
+
+```ruby
+module Statistics
+  def self.average(nums)
+    # ...
+  end
+end
+
+Statistics.average([ 1, 2, 3 ]);
+```
+
+`until` loop:
+
+```ruby
+i = 0
+
+until i == 42
+  i += 1
+end
+```
+
+Arrays are zero-indexed in Ruby.
+
+Negative index works on arrays in Ruby.
+
+Common `Array` methods:
+
+* `Array.size`
+* `Array.sum`
+* `Array.reverse`
+* `Array.flatten`
+* `Array.sort`
+
+Enumeration of an array:
+
+```ruby
+words = [ "4", "2", "42" ]
+
+words.each do |word|
+  puts word
+end
+```
+
+Some `Array` methods that take a *block*:
+
+* `Array.sum` 
+* `Array.count`
+* `Array.any?`
+* `Array.none?`
+* `Array.select`
+* `Array.all?`
+* `Array.map`
+* `Array.find`
+
+
+Blocks are kind of like anonymous functions.
+
+```ruby
+nums = [ 1, 2, 3, 4, 42 ]
+
+nums.count  { |num| num == 42 } #=> 1
+```
+
+The enumeration of `Hash`es has the same syntax as the enumeration of `Array`s:
+
+```ruby
+pet_names.each { |key, value| ... }
+```
+

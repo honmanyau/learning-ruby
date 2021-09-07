@@ -178,3 +178,49 @@ The enumeration of `Hash`es has the same syntax as the enumeration of `Array`s:
 pet_names.each { |key, value| ... }
 ```
 
+`OpenStruct` is like object in JavaScript:
+
+```ruby
+npc = OpenStruct.new({ name: "Nadeshiko", level: 42 })
+
+npc.name #=> "Nadeshiko"
+npc.level #=> 42
+```
+
+With `OpenStruct`, the following shorthand is available:
+
+```ruby
+npcs.sum { |npc| npc.level }
+npcs.sum(&:level)
+```
+
+Using Ruby's Standard Library:
+
+```ruby
+require 'ostruct'
+
+npc = OpenStruct.new({ name: "Nadeshiko", level: 42 })
+```
+
+Handling exceptions:
+
+```ruby
+begin
+  # Code that raises and exception.
+rescue => e
+  # Logic that runs when an exception is raised.
+
+  puts "Exception class: #{ e.class.name }"
+  puts "Exception class: #{ e.message }"
+end
+```
+
+Custom exceptions:
+
+```ruby
+class SomeError < StandardError
+end
+
+raise SomeError.new("Uwah!")
+```
+

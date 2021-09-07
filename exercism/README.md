@@ -248,3 +248,51 @@ class SomeModuleTest < Minitest::Test
   end
 end
 ```
+
+Sorting an `Array` on multiple values:
+
+```ruby
+arr = [
+  { "a" => 4, "b" => 2 },
+  { "a" => 2, "b" => 0 },
+  { "a" => 1, "b" => 3 },
+  { "a" => 4, "b" => 0 },
+  { "a" => 0, "b" => 0 }
+]
+
+arr.sort_by { |h| [ h["a"], h["b"] ] }
+
+=begin
+  [
+    { "a" => 0, "b" => 0 }, 
+    { "a" => 1, "b" => 3 }, 
+    { "a" => 2, "b" => 0 }, 
+    { "a" => 4, "b" => 0 }, 
+    { "a" => 4, "b" => 2 }
+  ]
+=end
+```
+
+Sorting a `Hash` on multiple values:
+
+```ruby
+h = {
+  "m" => { "a" => 4, "b" => 2 },
+  "n" => { "a" => 2, "b" => 0 },
+  "o" => { "a" => 1, "b" => 3 },
+  "p" => { "a" => 4, "b" => 0 },
+  "q" => { "a" => 0, "b" => 0 }
+}
+
+h.sort_by { |_, v| [ v["a"], v["b"] ] }.to_h
+
+=begin
+  {
+    "q" => { "a" => 0, "b" => 0 }, 
+    "o" => { "a" => 1, "b" => 3 }, 
+    "n" => { "a" => 2, "b" => 0 }, 
+    "p" => { "a" => 4, "b" => 0 }, 
+    "m" => { "a" => 4, "b" => 2 }
+  }
+=end
+```

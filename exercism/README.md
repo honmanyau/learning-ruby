@@ -224,3 +224,11 @@ end
 raise SomeError.new("Uwah!")
 ```
 
+Block commenting:
+
+```ruby
+=begin
+  All the things you want to say about the world.
+=end
+```
+

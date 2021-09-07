@@ -79,6 +79,8 @@ Some common `String` methods:
 * `split`
 * `center`
 * `gsub` — global substitution(?), can take a regex matching pattern.
+* `rjust`
+* `ljust`
 
 Some common `Number` methods:
 

@@ -232,3 +232,17 @@ Block commenting:
 =end
 ```
 
+Unit testing:
+
+```ruby
+# some_module_test.rb
+
+require 'minitest/autorun'
+require_relative 'some_module' # some_module.rb
+
+class SomeModuleTest < Minitest::Test
+  def test_one
+    assert_equal true, SomeModuleTest.some_method
+  end
+end
+```

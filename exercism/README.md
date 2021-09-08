@@ -304,3 +304,17 @@ String formatting, rounding to 2 d.p. as an example:
 
 #=> "2.9979"
 ```
+
+Collecting arguments with the `*` operator:
+
+```ruby
+def some_function(*args)
+  return args == [ 1, 2, 3 ]
+end
+
+some_function(1, 2, 3)
+
+#=> true
+```
+
+Use `**` for named arguments.

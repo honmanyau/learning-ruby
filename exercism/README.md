@@ -296,3 +296,11 @@ h.sort_by { |_, v| [ v["a"], v["b"] ] }.to_h
   }
 =end
 ```
+
+String formatting, rounding to 2 d.p. as an example:
+
+```ruby
+'%.4f' % 2.99792458
+
+#=> "2.9979"
+```

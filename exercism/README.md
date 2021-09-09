@@ -318,3 +318,30 @@ some_function(1, 2, 3)
 ```
 
 Use `**` for named arguments.
+
+Calling a block inside a method with `yield`:
+
+```ruby
+def some_method()
+  yield 42
+end
+
+some_method { |x| puts x }
+
+#=> 42
+```
+
+A slightly more complex use case with refinement(?):
+
+```ruby
+class Array
+  def inefficient_map
+    return self.map { |x| yield x }
+  end
+end
+
+[ 1, 2, 3 ].inefficient_map { |x| x * x }
+
+#=> [ 1, 4, 9 ] 
+```
+

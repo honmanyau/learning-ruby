@@ -345,3 +345,15 @@ end
 #=> [ 1, 4, 9 ] 
 ```
 
+Symbol in Ruby:
+
+```ruby
+a = :colon
+b = :colon
+
+a == b
+
+#=> true
+```
+
+See also [this thread](https://softwareengineering.stackexchange.com/questions/24460).

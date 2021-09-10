@@ -357,3 +357,30 @@ a == b
 ```
 
 See also [this thread](https://softwareengineering.stackexchange.com/questions/24460).
+
+Defining instance methods dynamically:
+
+```ruby
+class SomeClass
+  def initialize(someone, something)
+    define_singleton_method(someone) {
+      puts "#{someone} said #{something}."
+    }
+  end
+end
+
+SomeClass.new("alice", "nyanpasu").alice
+```
+
+Defining a static method dynamically:
+
+```ruby
+SOMEONE = "alice"
+SOMETHING = "nyanpasu"
+
+class SomeClass
+  define_method(SOMEONE) {
+    puts "#{someone} said #{something}."
+  }
+end
+```

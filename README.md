@@ -6,4 +6,5 @@ This repository contains notes and code written when I was learning Ruby. They a
 
 ## Table of Contents
 
-* [Exercism, Ruby Track](./exercism)
+* [Ruby Syntax](./ruby-syntax)
+* [Sorbet Syntax](./sorbet-syntax)

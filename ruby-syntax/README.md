@@ -1,4 +1,4 @@
-# Exercism, Ruby Track
+# Ruby Syntax
 
 ## Table of Contents
 
